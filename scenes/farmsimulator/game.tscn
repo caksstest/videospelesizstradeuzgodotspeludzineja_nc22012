@@ -1,7 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://crfqdjdfhyfgv"]
+[gd_scene load_steps=45 format=3 uid="uid://crfqdjdfhyfgv"]
 
 [ext_resource type="Script" path="res://scripts/farmsimulator/game.gd" id="1_67ngy"]
+[ext_resource type="Texture2D" uid="uid://b60e4fipnmqek" path="res://assets/sprites/background/vecteezy_farm-scene-with-many-different-fruits-trees-at-sunset-time_2747495/eegg_jjs9_210210_generated.jpg" id="2_kxrqi"]
 [ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="2_pniol"]
+[ext_resource type="Texture2D" uid="uid://3h11ba8ndi6" path="res://assets/sprites/fruit/vegetable &fruit（.png" id="4_xbbkw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d17gs"]
 
@@ -31,6 +33,81 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsr2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsyru"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(37, 25, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcre2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsyru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqup0"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(38, 8, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nh08q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqup0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5exj"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(5, 41, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_quiys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5exj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryms8"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(56, 41, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_at6fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryms8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82vt1"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(5, 75, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m711d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82vt1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sp6o1"]
 
@@ -76,6 +153,81 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_helgg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smx4k"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(6, 27, 17, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypsy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smx4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3mnu"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(38, 57, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8lsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3mnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfd55"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(21, 57, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4ai3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfd55")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djju5"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(4, 57, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6fs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djju5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u8q3"]
+atlas = ExtResource("4_xbbkw")
+region = Rect2(21, 8, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb7fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u8q3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2vxx"]
 
@@ -139,6 +291,11 @@ shadow_offset = Vector2(0, 3.41)
 
 [node name="game" type="CanvasLayer"]
 script = ExtResource("1_67ngy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640.5, 359.5)
+scale = Vector2(0.666146, 0.690682)
+texture = ExtResource("2_kxrqi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -273,6 +430,11 @@ offset_top = 53.0
 offset_right = 419.0
 offset_bottom = 76.0
 
+[node name="first" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1"]
+position = Vector2(46, 38)
+scale = Vector2(4.80882, 4.36765)
+sprite_frames = SubResource("SpriteFrames_pcre2")
+
 [node name="farm2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -343,6 +505,11 @@ offset_left = 296.0
 offset_top = 53.0
 offset_right = 419.0
 offset_bottom = 76.0
+
+[node name="second" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2"]
+position = Vector2(45, 37)
+scale = Vector2(4.91176, 4.20588)
+sprite_frames = SubResource("SpriteFrames_nh08q")
 
 [node name="farm3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
@@ -415,6 +582,11 @@ offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
 
+[node name="third" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3"]
+position = Vector2(47, 39)
+scale = Vector2(4.45588, 4.36765)
+sprite_frames = SubResource("SpriteFrames_quiys")
+
 [node name="farm4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -486,6 +658,11 @@ offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
 
+[node name="fourth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4"]
+position = Vector2(72, 40)
+scale = Vector2(4.44118, 4.38235)
+sprite_frames = SubResource("SpriteFrames_at6fc")
+
 [node name="farm5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -556,6 +733,11 @@ offset_left = 98.0
 offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
+
+[node name="fifth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5"]
+position = Vector2(57, 45)
+scale = Vector2(3.73529, 4.44118)
+sprite_frames = SubResource("SpriteFrames_m711d")
 
 [node name="farm1buy" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -753,6 +935,11 @@ offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
 
+[node name="sixth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6"]
+position = Vector2(55, 40)
+scale = Vector2(5.5, 5.73077)
+sprite_frames = SubResource("SpriteFrames_ypsy8")
+
 [node name="farm7" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -823,6 +1010,11 @@ offset_left = 98.0
 offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
+
+[node name="seventh" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7"]
+position = Vector2(52, 39)
+scale = Vector2(5.32353, 4.61765)
+sprite_frames = SubResource("SpriteFrames_l8lsf")
 
 [node name="farm8" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 visible = false
@@ -895,6 +1087,11 @@ offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
 
+[node name="eigth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8"]
+position = Vector2(47, 36)
+scale = Vector2(4.02941, 3.79412)
+sprite_frames = SubResource("SpriteFrames_m4ai3")
+
 [node name="farm9" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -966,6 +1163,11 @@ offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
 
+[node name="ninth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9"]
+position = Vector2(42, 39)
+scale = Vector2(5.14706, 3.79412)
+sprite_frames = SubResource("SpriteFrames_k6fs4")
+
 [node name="farm10" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 visible = false
 custom_minimum_size = Vector2(0, 80)
@@ -1036,6 +1238,11 @@ offset_left = 98.0
 offset_top = 25.0
 offset_right = 408.0
 offset_bottom = 51.0
+
+[node name="tenth" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10"]
+position = Vector2(49, 36)
+scale = Vector2(4.14706, 4.38235)
+sprite_frames = SubResource("SpriteFrames_yb7fh")
 
 [node name="farm6buy" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
