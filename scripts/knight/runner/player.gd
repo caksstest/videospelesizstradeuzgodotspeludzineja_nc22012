@@ -11,6 +11,8 @@ var elapsed_time = 0.0
 var timer_stopped = false
 @onready var score: Label = $"../CanvasLayer/Score"
 @onready var time: Label = $"../CanvasLayer/Time"
+func _ready() -> void:
+	Autogame.score = 0 
 func _physics_process(delta: float) -> void:
 	 # Update elapsed time only if the timer isn't stopped
 	if not timer_stopped:
@@ -19,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
