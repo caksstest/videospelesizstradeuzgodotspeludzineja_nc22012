@@ -1,0 +1,369 @@
+[gd_scene load_steps=17 format=3 uid="uid://4cms5xdn2n0e"]
+
+[ext_resource type="Script" path="res://scripts/sudoku/sudokuclasic/sudoku.gd" id="1_aane8"]
+[ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="2_7lequ"]
+[ext_resource type="PackedScene" uid="uid://dml24b3qanmvr" path="res://scenes/sudoku/panel.tscn" id="2_hyhtb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmphc"]
+bg_color = Color(0.380494, 0.516625, 0.370272, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qn0cc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6fee"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py8d2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eqtx"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.835294, 0.835294, 0.835294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrua5"]
+bg_color = Color(0.454524, 0.454524, 0.454524, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.454902, 0.454902, 0.454902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gb5lh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vanau"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3dsb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbn00"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2by6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ea1yx"]
+
+[node name="sudoku" type="Node2D"]
+script = ExtResource("1_aane8")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1281.0
+offset_bottom = 719.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmphc")
+
+[node name="SelectGrid" type="GridContainer" parent="."]
+offset_left = 45.0
+offset_top = 610.0
+offset_right = 1245.0
+offset_bottom = 693.0
+theme_override_constants/h_separation = 60
+columns = 9
+
+[node name="Button1" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "1"
+
+[node name="Button2" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "2"
+
+[node name="Button3" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "3"
+
+[node name="Button4" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "4"
+
+[node name="Button5" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "5"
+
+[node name="Button6" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "6"
+
+[node name="Button7" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "7"
+
+[node name="Button8" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "8"
+
+[node name="Button9" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.277528, 0.277528, 0.277528, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kfxgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6fee")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_py8d2")
+text = "9"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 305.0
+offset_top = 88.0
+offset_right = 348.0
+offset_bottom = 135.0
+columns = 9
+
+[node name="lines" parent="." instance=ExtResource("2_hyhtb")]
+offset_left = 303.0
+offset_top = 90.0
+offset_right = 303.0
+offset_bottom = 90.0
+
+[node name="difficulty" type="Label" parent="."]
+offset_left = 138.0
+offset_top = 55.0
+offset_right = 178.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("2_7lequ")
+
+[node name="wronghits" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 832.0
+offset_top = 56.0
+offset_right = 1251.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7lequ")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gamedone" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -247.0
+offset_right = 352.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="winorlose" type="Label" parent="CanvasLayer/gamedone"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 20.0
+offset_bottom = 90.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/gamedone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="restart" type="Button" parent="CanvasLayer/gamedone/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7lequ")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eqtx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrua5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gb5lh")
+text = "Again"
+
+[node name="choosediff" type="Button" parent="CanvasLayer/gamedone/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7lequ")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eqtx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrua5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gb5lh")
+text = "Difficulty"
+
+[node name="gamemenu" type="Button" parent="CanvasLayer/gamedone/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7lequ")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qn0cc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3eqtx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrua5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gb5lh")
+text = "Game menu"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 886.0
+offset_top = 334.0
+offset_right = 1054.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Undo" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7lequ")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vanau")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b3dsb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rbn00")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b2by6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ea1yx")
+text = "Undo"
+
+[node name="errortimer" type="Timer" parent="."]
+
+[node name="time" type="Label" parent="."]
+offset_left = 486.0
+offset_top = 57.0
+offset_right = 526.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_7lequ")
+
+[connection signal="pressed" from="CanvasLayer/gamedone/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/gamedone/VBoxContainer/choosediff" to="." method="_on_choosediff_pressed"]
+[connection signal="pressed" from="CanvasLayer/gamedone/VBoxContainer/gamemenu" to="." method="_on_gamemenu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Undo" to="." method="_on_undo_pressed"]
+[connection signal="timeout" from="errortimer" to="." method="_on_errortimer_timeout"]

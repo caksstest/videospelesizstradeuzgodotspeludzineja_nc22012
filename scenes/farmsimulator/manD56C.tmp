@@ -1,0 +1,321 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6eqys6x53w0m"]
+
+[ext_resource type="Script" path="res://scripts/farmsimulator/managers.gd" id="1_08l5y"]
+[ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="1_g08nx"]
+
+[node name="managers" type="CanvasLayer"]
+script = ExtResource("1_08l5y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 53.0
+offset_top = -332.0
+offset_right = -41.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Manager list"
+
+[node name="Money" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm1 manager"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button2"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm2 manager"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button3"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm3 manager"
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button4"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm4 manager"
+
+[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Button5"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm5 manager"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm6 manager"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button2"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm7 manager"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button3"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm8 manager"
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button4"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm9 manager"
+
+[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 4.5
+offset_right = 0.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Button5"]
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("1_g08nx")
+theme_override_font_sizes/font_size = 20
+text = "Farm10 manager"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"

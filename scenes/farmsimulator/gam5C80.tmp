@@ -1,0 +1,583 @@
+[gd_scene load_steps=3 format=3 uid="uid://crfqdjdfhyfgv"]
+
+[ext_resource type="Script" path="res://scripts/farmsimulator/game.gd" id="1_67ngy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcjdp"]
+border_width_left = 40
+border_width_top = 40
+border_width_right = 40
+border_width_bottom = 40
+
+[node name="game" type="CanvasLayer"]
+script = ExtResource("1_67ngy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 24.0
+offset_right = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="money" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Money: 0 $"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="farm1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1/buy1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer1" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm1"]
+
+[node name="farm2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2/buy2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer2" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm2"]
+
+[node name="farm3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy3" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3/buy3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer3" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm3"]
+
+[node name="farm4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy4" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4/buy4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer4" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm4"]
+
+[node name="farm5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy5" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5/buy5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer5" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer/farm5"]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="farm6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy6" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6/buy6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer6" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm6"]
+
+[node name="farm7" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy7" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7/buy7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer7" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm7"]
+
+[node name="farm8" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy8" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8/buy8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer8" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm8"]
+
+[node name="farm9" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy9" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9/buy9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer9" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm9"]
+
+[node name="farm10" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcjdp")
+
+[node name="nextup" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 488.0
+offset_bottom = 54.0
+text = "1/25"
+
+[node name="buy10" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.049
+anchor_bottom = 0.178
+offset_left = 499.0
+offset_top = 12.0
+offset_right = 552.404
+offset_bottom = 51.76
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10/buy10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="progress" type="ProgressBar" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 25.0
+offset_right = 418.0
+offset_bottom = 52.0
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
+[node name="Timer10" type="Timer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/farm10"]
+
+[node name="menu" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -67.0
+offset_right = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm1" to="." method="_on_farm_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm1/buy1" to="." method="_on_buy_1_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer/farm1/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm2" to="." method="_on_farm_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm2/buy2" to="." method="_on_buy_2_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer/farm2/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm3" to="." method="_on_farm_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm3/buy3" to="." method="_on_buy_3_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer/farm3/Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm4" to="." method="_on_farm_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm4/buy4" to="." method="_on_buy_4_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer/farm4/Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm5" to="." method="_on_farm_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/farm5/buy5" to="." method="_on_buy_5_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer/farm5/Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm6" to="." method="_on_farm_6_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm6/buy6" to="." method="_on_buy_6_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm6/Timer6" to="." method="_on_timer_6_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm7" to="." method="_on_farm_7_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm7/buy7" to="." method="_on_buy_7_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm7/Timer7" to="." method="_on_timer_7_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm8" to="." method="_on_farm_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm8/buy8" to="." method="_on_buy_8_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm8/Timer8" to="." method="_on_timer_8_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm9" to="." method="_on_farm_9_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm9/buy9" to="." method="_on_buy_9_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm9/Timer9" to="." method="_on_timer_9_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm10" to="." method="_on_farm_10_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm10/buy10" to="." method="_on_buy_10_pressed"]
+[connection signal="timeout" from="VBoxContainer/HBoxContainer/VBoxContainer2/farm10/Timer10" to="." method="_on_timer_10_timeout"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

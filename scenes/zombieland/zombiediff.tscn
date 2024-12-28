@@ -1,0 +1,211 @@
+[gd_scene load_steps=10 format=3 uid="uid://4rxpscmil21f"]
+
+[ext_resource type="Script" path="res://scripts/zombieland/zombiediff.gd" id="1_53v5s"]
+[ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="2_664x8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qbr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cyp7"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.835294, 0.835294, 0.835294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvrgn"]
+bg_color = Color(0.454524, 0.454524, 0.454524, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.454902, 0.454902, 0.454902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx0h4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpmo7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wda0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mhpp"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="zombiediff" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53v5s")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 56.0
+offset_right = 180.0
+offset_bottom = 203.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_664x8")
+theme_override_font_sizes/font_size = 40
+text = "Select mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -87.0
+offset_right = 269.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="hbox" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="easy" type="Button" parent="VBoxContainer2/hbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_664x8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qbr4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cyp7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvrgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nx0h4")
+text = "Easy"
+
+[node name="hard" type="Button" parent="VBoxContainer2/hbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_664x8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qbr4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cyp7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvrgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lpmo7")
+text = "Medium"
+
+[node name="imposible" type="Button" parent="VBoxContainer2/hbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_664x8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qbr4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cyp7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvrgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wda0")
+text = "Imposible"
+
+[node name="back" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_664x8")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6qbr4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3cyp7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvrgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8mhpp")
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer2/hbox/easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer2/hbox/hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="VBoxContainer2/hbox/imposible" to="." method="_on_imposible_pressed"]
+[connection signal="pressed" from="VBoxContainer2/back" to="." method="_on_back_pressed"]

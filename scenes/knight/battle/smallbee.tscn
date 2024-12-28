@@ -1,0 +1,169 @@
+[gd_scene load_steps=22 format=3 uid="uid://bbl2ev34sbyfd"]
+
+[ext_resource type="Texture2D" uid="uid://y5w8domdwdyv" path="res://assets/sprites/worldforknight/Mob/Small Bee/Attack/Attack-Sheet.png" id="1_ios3s"]
+[ext_resource type="Script" path="res://scripts/knight/battle/smallbee.gd" id="1_m6fpv"]
+[ext_resource type="Texture2D" uid="uid://cxewdbjngo06o" path="res://assets/sprites/worldforknight/Mob/Small Bee/Fly/Fly-Sheet.png" id="2_7s16i"]
+[ext_resource type="Texture2D" uid="uid://ji2843vl58j4" path="res://assets/sprites/worldforknight/Mob/Small Bee/Hit/Hit-Sheet.png" id="3_n4e7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p6ib"]
+atlas = ExtResource("1_ios3s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgspy"]
+atlas = ExtResource("1_ios3s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f1i3"]
+atlas = ExtResource("1_ios3s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrw4l"]
+atlas = ExtResource("1_ios3s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0psnm"]
+atlas = ExtResource("2_7s16i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mif23"]
+atlas = ExtResource("2_7s16i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yycn7"]
+atlas = ExtResource("2_7s16i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p34b7"]
+atlas = ExtResource("2_7s16i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi6sp"]
+atlas = ExtResource("3_n4e7n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvu5s"]
+atlas = ExtResource("3_n4e7n")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udw3n"]
+atlas = ExtResource("3_n4e7n")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goudr"]
+atlas = ExtResource("3_n4e7n")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkqo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p6ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgspy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f1i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrw4l")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0psnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mif23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yycn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p34b7")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi6sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvu5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udw3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goudr")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y800m"]
+radius = 131.244
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64ecw"]
+radius = 17.4642
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x52wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmant"]
+
+[node name="smallbee" type="CharacterBody2D" groups=["bee"]]
+collision_layer = 3
+script = ExtResource("1_m6fpv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_nkqo7")
+animation = &"attack"
+autoplay = "fly"
+
+[node name="spotarea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spotarea"]
+shape = SubResource("CircleShape2D_y800m")
+
+[node name="attack" type="Area2D" parent="." groups=["beeattack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+shape = SubResource("CircleShape2D_64ecw")
+
+[node name="beebody" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beebody"]
+shape = SubResource("CircleShape2D_x52wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qmant")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0.694118, 0, 0, 1)
+offset_left = -10.0
+offset_top = -17.0
+offset_right = 190.0
+offset_bottom = 10.0
+scale = Vector2(0.1, 0.1)
+max_value = 500.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 8.0
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="spotarea" to="." method="_on_spotarea_body_entered"]
+[connection signal="body_exited" from="spotarea" to="." method="_on_spotarea_body_exited"]
+[connection signal="area_entered" from="beebody" to="." method="_on_beebody_area_entered"]
+[connection signal="area_exited" from="beebody" to="." method="_on_beebody_area_exited"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

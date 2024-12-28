@@ -1,0 +1,148 @@
+[gd_scene load_steps=20 format=3 uid="uid://cggt6tw3ntf48"]
+
+[ext_resource type="Script" path="res://scripts/knight/runner/orc.gd" id="1_b3tj1"]
+[ext_resource type="Texture2D" uid="uid://dfspjthu8ut37" path="res://assets/sprites/Orc/Orc-Death.png" id="2_gkax6"]
+[ext_resource type="Texture2D" uid="uid://cxb2150wl11qo" path="res://assets/sprites/Orc/Orc-Walk.png" id="3_5hxrr"]
+[ext_resource type="PackedScene" uid="uid://ddyxi6poarfiw" path="res://scenes/knight/runner/restartzone.tscn" id="4_a22wm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g1l7"]
+atlas = ExtResource("2_gkax6")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqa7w"]
+atlas = ExtResource("2_gkax6")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke7cd"]
+atlas = ExtResource("2_gkax6")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbmdy"]
+atlas = ExtResource("2_gkax6")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nuht"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej57x"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yud7b"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo1ei"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul6sl"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wblc"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcbp0"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi7wp"]
+atlas = ExtResource("3_5hxrr")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r78ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g1l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqa7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke7cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbmdy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nuht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej57x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yud7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo1ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul6sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wblc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcbp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi7wp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5s3ce"]
+radius = 5.19315
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jxd4"]
+radius = 11.0
+
+[node name="orc" type="Node2D"]
+script = ExtResource("1_b3tj1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -7)
+scale = Vector2(1.195, 1.07511)
+sprite_frames = SubResource("SpriteFrames_r78ue")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="restartzone" parent="." instance=ExtResource("4_a22wm")]
+position = Vector2(7.62939e-06, -14)
+scale = Vector2(2.13, 1.83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="restartzone"]
+position = Vector2(-3.58188e-06, 2.73224)
+shape = SubResource("CircleShape2D_5s3ce")
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(1.195, 1.135)
+target_position = Vector2(15.0628, -1.43051e-06)
+
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(1.195, 1.135)
+target_position = Vector2(-16.7364, -1.43051e-06)
+
+[node name="orcbody" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="orcbody"]
+position = Vector2(0, -9)
+scale = Vector2(1, 0.840001)
+shape = SubResource("CircleShape2D_6jxd4")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="restartzone" to="." method="_on_restartzone_area_entered"]
+[connection signal="area_entered" from="orcbody" to="." method="_on_orcbody_area_entered"]

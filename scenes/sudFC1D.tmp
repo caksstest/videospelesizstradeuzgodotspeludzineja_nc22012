@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://4cms5xdn2n0e"]
+
+[ext_resource type="Script" path="res://scripts/sudoku.gd" id="1_o2n8g"]
+
+[node name="sudoku" type="Node2D"]
+script = ExtResource("1_o2n8g")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 360.0
+offset_bottom = 168.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+
+[node name="SelectGrid" type="GridContainer" parent="."]
+offset_left = 45.0
+offset_top = 602.0
+offset_right = 1245.0
+offset_bottom = 685.0
+theme_override_constants/h_separation = 60
+columns = 9
+
+[node name="Button1" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="Button2" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "2"
+
+[node name="Button3" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="Button4" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "4"
+
+[node name="Button5" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "5"
+
+[node name="Button6" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "7"
+
+[node name="Button7" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="Button8" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "8"
+
+[node name="Button9" type="Button" parent="SelectGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "9"

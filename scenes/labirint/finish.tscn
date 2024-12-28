@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvle5nhvs462x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fvcg2"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul2hw"]
+
+[sub_resource type="TextMesh" id="TextMesh_0f7xi"]
+material = SubResource("StandardMaterial3D_ul2hw")
+text = "Finish"
+font_size = 60
+
+[sub_resource type="Animation" id="Animation_qy4us"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ocacj"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60ibx"]
+_data = {
+"RESET": SubResource("Animation_qy4us"),
+"idle": SubResource("Animation_ocacj")
+}
+
+[node name="finnish" type="Area3D" groups=["finish"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.00575952, -0.999983, 0, 0.999983, 0.00575952, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_fvcg2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_0f7xi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_60ibx")
+}
+autoplay = "idle"
+speed_scale = 0.4

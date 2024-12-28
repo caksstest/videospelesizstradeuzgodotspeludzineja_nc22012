@@ -1,0 +1,356 @@
+[gd_scene load_steps=17 format=3 uid="uid://0752ig07ym2g"]
+
+[ext_resource type="Script" path="res://scripts/labirint/labirint.gd" id="1_baml1"]
+[ext_resource type="MeshLibrary" uid="uid://btx51d43qayul" path="res://scenes/labirint/tileset.meshlib" id="1_um20p"]
+[ext_resource type="PackedScene" uid="uid://6oqspet8cth" path="res://scenes/labirint/player.tscn" id="2_24wt1"]
+[ext_resource type="PackedScene" uid="uid://kwp6kjrcubvt" path="res://scenes/labirint/capsule.tscn" id="4_0w82s"]
+[ext_resource type="PackedScene" uid="uid://dvle5nhvs462x" path="res://scenes/labirint/finish.tscn" id="4_f8umb"]
+[ext_resource type="PackedScene" uid="uid://bawo0ok1804k3" path="res://scenes/labirint/negativcapsule.tscn" id="5_8gtss"]
+[ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="6_e4b3t"]
+[ext_resource type="PackedScene" uid="uid://g6xt1ia6l7v4" path="res://scenes/labirint/orb.tscn" id="6_psebu"]
+[ext_resource type="PackedScene" uid="uid://b2ufc41whqwf7" path="res://scenes/labirint/negativorb.tscn" id="7_ikbfb"]
+[ext_resource type="PackedScene" uid="uid://b8uhl2c37h4s0" path="res://scenes/labirint/cube.tscn" id="8_gcoo4"]
+[ext_resource type="PackedScene" uid="uid://b4crif0us1vr4" path="res://scenes/labirint/negativcube.tscn" id="9_hxdwv"]
+
+[sub_resource type="Environment" id="Environment_piir5"]
+background_mode = 1
+background_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6lxb"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.835294, 0.835294, 0.835294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vrpr"]
+bg_color = Color(0.454902, 0.454902, 0.454902, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.454902, 0.454902, 0.454902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wegih"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="labirint" type="Node3D"]
+script = ExtResource("1_baml1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_piir5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.0535211, 0.998567, 0, -0.998567, -0.0535211, 13.6829, 17.6123, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_um20p")
+data = {
+"cells": PackedInt32Array(1, 0, 0, 2, 65535, 0, 2, 65534, 0, 2, 0, 0, 2, 65533, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 3, 65531, 0, 6, 65532, 0, 5, 65532, 0, 8, 65533, 0, 8, 65534, 0, 8, 0, 0, 8, 1, 0, 8, 2, 0, 9, 65531, 0, 10, 65531, 0, 4, 65533, 0, 4, 65534, 0, 4, 0, 0, 4, 2, 0, 9, 1, 0, 10, 1, 0, 6, 65533, 0, 6, 65534, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 4, 65535, 0, 1, 2, 0, 2, 2, 0, 4, 3, 0, 10, 65533, 0, 11, 65533, 0, 10, 65535, 0, 10, 3, 0, -65532, 65532, 1, -65531, 65532, 1, -65534, 65535, 1, -65534, 0, 1, -65526, 65533, 1, -65532, 65535, 1, -65532, 0, 1, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 2, 65529, 0, 10, 65529, 0, 11, 65529, 0, 12, 65529, 0, -65527, 65533, 1, -65527, 65534, 1, -65527, 65535, 1, -65527, 0, 1, -65528, 0, 1, -65528, 65535, 1, -65528, 65534, 1, -65529, 65534, 1, -65529, 65535, 1, -65529, 0, 1, -65530, 0, 1, -65530, 65535, 1, -65530, 65534, 1, -65531, 0, 1, -65531, 65535, 1, -65531, 65533, 1, -65531, 65534, 1, -65532, 65534, 1, -65532, 65533, 1, -65533, 65533, 1, -65533, 65534, 1, -65533, 65535, 1, -65533, 0, 1, -65533, 1, 1, -65535, 1, 1, -65535, 2, 1, -65535, 3, 1, -65534, 1, 1, -65534, 2, 1, -65534, 3, 1, -65533, 3, 1, -65533, 2, 1, -65532, 3, 1, -65532, 2, 1, -65532, 1, 1, -65531, 1, 1, -65531, 2, 1, -65531, 3, 1, -65530, 1, 1, -65530, 3, 1, -65529, 3, 1, -65529, 2, 1, -65529, 1, 1, -65528, 1, 1, -65528, 3, 1, -65527, 1, 1, -65527, 2, 1, -65527, 3, 1, -65526, 3, 1, -65526, 2, 1, -65525, 3, 1, -65525, 2, 1, -65525, 1, 1, -65525, 65535, 1, -65525, 0, 1, -65526, 1, 1, -65526, 0, 1, -65526, 65535, 1, -65526, 65534, 1, -65525, 65534, 1, -65525, 65533, 1, -65525, 65532, 1, -65525, 65530, 1, -65526, 65530, 1, -65527, 65530, 1, -65528, 65530, 1, -65530, 65532, 1, -65530, 65533, 1, -65529, 65533, 1, -65529, 65532, 1, -65528, 65532, 1, -65527, 65532, 1, -65526, 65532, 1, -65525, 65531, 1, -65526, 65531, 1, -65527, 65531, 1, -65528, 65531, 1, -65529, 65531, 1, -65530, 65530, 1, -65530, 65531, 1, -65532, 65531, 1, -65531, 65531, 1, -65532, 65530, 1, -65533, 65530, 1, -65535, 65530, 1, -65534, 65530, 1, -65534, 65531, 1, -65535, 65531, 1, -65535, 65532, 1, -65535, 65533, 1, -65535, 65534, 1, -65535, 65535, 1, 12, 65530, 0, 12, 65531, 0, 12, 65532, 0, 12, 65533, 0, 12, 65535, 0, 12, 0, 0, 12, 1, 0, 12, 2, 0, 12, 4, 0, 11, 4, 0, 10, 4, 0, 8, 4, 0, 7, 4, 0, 5, 4, 0, 4, 4, 0, 2, 4, 0, -65524, 3, 1, -65523, 3, 1, 14, 2, 0, 14, 3, 0, 14, 4, 0, 0, 65528, 0, 0, 65527, 0, 0, 65526, 0, 0, 65525, 0, 2, 65525, 0, 3, 65525, 0, 4, 65525, 0, 5, 65525, 0, 7, 65525, 0, 8, 65525, 0, 9, 65525, 0, 10, 65525, 0, 12, 65525, 0, 13, 65525, 0, 14, 65525, 0, 15, 65525, 0, 16, 65525, 0, 16, 65528, 0, 16, 65529, 0, 16, 65530, 0, 16, 65531, 0, 16, 65532, 0, 16, 65533, 0, 16, 0, 0, 16, 1, 0, 16, 3, 0, 16, 4, 0, 16, 65534, 0, 16, 65535, 0, 13, 65529, 0, 14, 65529, 0, 2, 65528, 0, 2, 65527, 0, 3, 65527, 0, 4, 65527, 0, 5, 65527, 0, 7, 65527, 0, 8, 65527, 0, 9, 65527, 0, 10, 65527, 0, 11, 65527, 0, 12, 65527, 0, 14, 65527, 0, 14, 65528, 0, 14, 65531, 0, 14, 65532, 0, 14, 65533, 0, 14, 65535, 0, 14, 0, 0, 14, 1, 0, 0, 65524, 0, 0, 65523, 0, 1, 65523, 0, 2, 65523, 0, 3, 65523, 0, 4, 65523, 0, 5, 65523, 0, 6, 65523, 0, 7, 65523, 0, 8, 65523, 0, 9, 65523, 0, 10, 65523, 0, 11, 65523, 0, 12, 65523, 0, 13, 65523, 0, 14, 65523, 0, 15, 65523, 0, 16, 65523, 0, 17, 65523, 0, 18, 65523, 0, 18, 65524, 0, 18, 65525, 0, 18, 65526, 0, 18, 65527, 0, 18, 65528, 0, 18, 65529, 0, 18, 65530, 0, 18, 65531, 0, 18, 65532, 0, 18, 65533, 0, 18, 65534, 0, 18, 65535, 0, 18, 0, 0, 18, 1, 0, 18, 2, 0, 18, 3, 0, 18, 4, 0, 18, 6, 0, 17, 6, 0, 16, 6, 0, 15, 6, 0, 14, 6, 0, 13, 6, 0, 12, 6, 0, 11, 6, 0, 10, 6, 0, 9, 6, 0, 8, 6, 0, 7, 6, 0, 6, 6, 0, 5, 6, 0, 4, 6, 0, 3, 6, 0, 2, 6, 0, 1, 6, 0, 0, 6, 0, 0, 5, 0, 5, 65526, 0, 8, 65526, 0, 12, 65526, 0, 15, 65527, 0, 16, 65527, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 2, 5, 0, 7, 5, 0, 17, 3, 0, 19, 4, 0, 19, 5, 0, 19, 6, 0, 13, 65533, 0, 13, 1, 0, 8, 65531, 0, 8, 65532, 0, 10, 5, 0, -65535, 65529, 1, -65535, 65528, 1, -65535, 65527, 1, -65535, 65526, 1, -65534, 65526, 1, -65533, 65526, 1, -65532, 65526, 1, -65534, 65525, 1, -65535, 65525, 1, -65535, 65524, 1, -65534, 65524, 1, -65533, 65524, 1, -65532, 65524, 1, -65531, 65524, 1, -65530, 65524, 1, -65529, 65524, 1, -65528, 65524, 1, -65527, 65524, 1, -65526, 65524, 1, -65525, 65524, 1, -65524, 65524, 1, -65523, 65524, 1, -65522, 65524, 1, -65521, 65524, 1, -65520, 65524, 1, -65519, 65524, 1, -65519, 65525, 1, -65519, 65526, 1, -65519, 65527, 1, -65519, 65528, 1, -65519, 65529, 1, -65519, 65530, 1, -65519, 65531, 1, -65519, 65532, 1, -65519, 65533, 1, -65519, 65534, 1, -65519, 65535, 1, -65519, 0, 1, -65519, 1, 1, -65519, 2, 1, -65520, 2, 1, -65521, 2, 1, -65521, 3, 1, -65521, 4, 1, -65520, 4, 1, -65520, 5, 1, -65519, 5, 1, -65519, 4, 1, -65518, 5, 1, -65521, 5, 1, -65522, 5, 1, -65523, 5, 1, -65524, 5, 1, -65525, 5, 1, -65522, 4, 1, -65523, 4, 1, -65523, 2, 1, -65523, 1, 1, -65523, 0, 1, -65523, 65535, 1, -65523, 65534, 1, -65524, 65534, 1, -65522, 65534, 1, -65521, 65534, 1, -65520, 65534, 1, -65520, 65535, 1, -65521, 65535, 1, -65521, 0, 1, -65521, 1, 1, -65520, 3, 1, -65521, 65533, 1, -65521, 65532, 1, -65521, 65531, 1, -65521, 65530, 1, -65522, 65530, 1, -65522, 65531, 1, -65523, 65531, 1, -65524, 65531, 1, -65523, 65530, 1, -65520, 65530, 1, -65520, 65531, 1, -65522, 65533, 1, -65522, 65532, 1, -65523, 65533, 1, -65524, 65533, 1, -65524, 65532, 1, -65523, 65532, 1, -65523, 65529, 1, -65522, 65529, 1, -65524, 65530, 1, -65521, 65528, 1, -65520, 65528, 1, -65521, 65529, 1, -65520, 65529, 1, -65521, 65527, 1, -65521, 65526, 1, -65520, 65526, 1, -65522, 65526, 1, -65523, 65526, 1, -65524, 65526, 1, -65525, 65526, 1, -65526, 65526, 1, -65525, 65525, 1, -65527, 65526, 1, -65527, 65525, 1, -65526, 65525, 1, -65528, 65526, 1, -65529, 65526, 1, -65530, 65526, 1, -65530, 65525, 1, -65529, 65525, 1, -65531, 65526, 1, -65533, 65527, 1, -65534, 65527, 1, -65534, 65528, 1, -65533, 65528, 1, -65532, 65528, 1, -65531, 65528, 1, -65530, 65528, 1, -65529, 65528, 1, -65528, 65528, 1, -65527, 65528, 1, -65526, 65528, 1, -65525, 65528, 1, -65527, 65529, 1, -65528, 65529, 1, -65526, 65529, 1, -65525, 65529, 1, -65524, 65529, 1, -65524, 65528, 1, -65523, 65528, 1, -65523, 65527, 1, -65522, 65527, 1, -65525, 65527, 1, -65524, 65527, 1, -65526, 65527, 1, -65527, 65527, 1, -65528, 65527, 1, -65529, 65527, 1, -65530, 65527, 1, -65529, 65529, 1, -65530, 65529, 1, -65529, 65530, 1, -65531, 65530, 1, -65528, 65533, 1, -65533, 4, 1, -65533, 5, 1, -65534, 5, 1, -65534, 4, 1, -65535, 4, 1, -65535, 5, 1, -65532, 5, 1, -65531, 5, 1, -65530, 5, 1, -65529, 5, 1, -65530, 4, 1, -65529, 4, 1, -65528, 4, 1, -65527, 4, 1, -65527, 5, 1, -65528, 5, 1, -65526, 5, 1, -65526, 4, 1, 5, 65531, 0, 5, 65530, 0, 7, 65530, 0, 9, 65528, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_24wt1")]
+transform = Transform3D(0.999945, 0.0105067, 0, -0.0105067, 0.999945, 0, 0, 0, 1, 2.87363, 4.19929, -1.62175)
+
+[node name="enemies" type="Node3D" parent="."]
+
+[node name="capsules" type="Node3D" parent="."]
+
+[node name="capsule" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0538, 0, -1.06901)
+
+[node name="capsule2" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8443, 0, 3.00247)
+
+[node name="capsule3" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11696, 0, -9.06033)
+
+[node name="capsule4" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9858, 0, -15.1708)
+
+[node name="negativcapsules" type="Node3D" parent="."]
+
+[node name="negativcapsule" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3062, 0, -0.808245)
+
+[node name="negativcapsule2" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4245, 0, 6.59754)
+
+[node name="negativcapsule3" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9297, 0, 4.87428)
+
+[node name="negativcapsule4" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0205, 0, -15.065)
+
+[node name="orbs" type="Node3D" parent="."]
+
+[node name="orb" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9)
+
+[node name="orb2" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7179, 0, -11.0438)
+
+[node name="orb3" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8558, 0, -18.9708)
+
+[node name="orb4" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2478, 0, 11.0185)
+
+[node name="negativorb" type="Node3D" parent="."]
+
+[node name="negativorb" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.033, 0, -11.2649)
+
+[node name="negativorb2" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0985, 0, -2.67488)
+
+[node name="negativorb3" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9374, 0, -7.01649)
+
+[node name="negativorb4" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8569, 0, 1.10393)
+
+[node name="cubes" type="Node3D" parent="."]
+
+[node name="cube" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86248, 0, 11.0583)
+
+[node name="cube2" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09585, 0, -5.00801)
+
+[node name="cube3" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.86465, 0, -18.9173)
+
+[node name="cube4" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0151, 0, 10.8308)
+
+[node name="negativcube" type="Node3D" parent="."]
+
+[node name="negativcube" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8701, 0, 3.03092)
+
+[node name="negativcube2" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1961, 0, -6.82534)
+
+[node name="negativcube3" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0553, 0, 4.9935)
+
+[node name="negativcube4" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5229, 0, -14.9458)
+
+[node name="finish" parent="." instance=ExtResource("4_f8umb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 36.8093, 0, 10.9418)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="finishtime" type="Timer" parent="."]
+
+[node name="capsule" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 32.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="warning" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Orbs" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 31.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Cubes" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 110.0
+offset_right = 31.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Record" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 20.0
+offset_right = 1174.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedcap" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 50.0
+offset_right = 1153.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedorbs" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 80.0
+offset_right = 1151.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedcubes" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 110.0
+offset_right = 1202.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="warningtimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Lives" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_e4b3t")
+theme_override_font_sizes/font_size = 30
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.5
+offset_top = -163.0
+offset_right = 207.5
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -104.0
+offset_right = 48.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="restart" type="Button" parent="CanvasLayer/panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_e4b3t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mltai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6lxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vrpr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wegih")
+text = "Again
+"
+
+[node name="nextlevel" type="Button" parent="CanvasLayer/panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_e4b3t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mltai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6lxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vrpr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wegih")
+text = "Next level"
+
+[node name="gameselect" type="Button" parent="CanvasLayer/panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_e4b3t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mltai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6lxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vrpr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wegih")
+text = "main menu"
+
+[connection signal="capsule" from="Player" to="." method="_on_player_capsule"]
+[connection signal="cube" from="Player" to="." method="_on_player_cube"]
+[connection signal="negativcapsule" from="Player" to="." method="_on_player_negativcapsule"]
+[connection signal="negativcube" from="Player" to="." method="_on_player_negativcube"]
+[connection signal="negativorb" from="Player" to="." method="_on_player_negativorb"]
+[connection signal="orb" from="Player" to="." method="_on_player_orb"]
+[connection signal="playertime" from="Player" to="." method="_on_player_playertime"]
+[connection signal="timeout" from="warningtimer" to="." method="_on_warningtimer_timeout"]
+[connection signal="pressed" from="CanvasLayer/panel/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/panel/VBoxContainer/nextlevel" to="." method="_on_nextlevel_pressed"]
+[connection signal="pressed" from="CanvasLayer/panel/VBoxContainer/gameselect" to="." method="_on_gameselect_pressed"]

@@ -1,0 +1,179 @@
+[gd_scene load_steps=12 format=3 uid="uid://0752ig07ym2g"]
+
+[ext_resource type="Script" path="res://scripts/labirint/labirint.gd" id="1_baml1"]
+[ext_resource type="MeshLibrary" uid="uid://btx51d43qayul" path="res://scenes/labirint/tileset.meshlib" id="1_um20p"]
+[ext_resource type="PackedScene" uid="uid://6oqspet8cth" path="res://scenes/labirint/player.tscn" id="2_24wt1"]
+[ext_resource type="PackedScene" uid="uid://kwp6kjrcubvt" path="res://scenes/labirint/capsule.tscn" id="4_0w82s"]
+[ext_resource type="PackedScene" uid="uid://dvle5nhvs462x" path="res://scenes/labirint/finish.tscn" id="4_f8umb"]
+[ext_resource type="PackedScene" uid="uid://bawo0ok1804k3" path="res://scenes/labirint/negativcapsule.tscn" id="5_8gtss"]
+[ext_resource type="FontFile" uid="uid://b3p4xyvcs0847" path="res://assets/font/Better VCR 6.1.ttf" id="6_e4b3t"]
+[ext_resource type="PackedScene" uid="uid://g6xt1ia6l7v4" path="res://scenes/labirint/orb.tscn" id="6_psebu"]
+[ext_resource type="PackedScene" uid="uid://b2ufc41whqwf7" path="res://scenes/labirint/negativorb.tscn" id="7_ikbfb"]
+[ext_resource type="PackedScene" uid="uid://b8uhl2c37h4s0" path="res://scenes/labirint/cube.tscn" id="8_gcoo4"]
+[ext_resource type="PackedScene" uid="uid://b4crif0us1vr4" path="res://scenes/labirint/negativcube.tscn" id="9_hxdwv"]
+
+[node name="labirint" type="Node3D"]
+script = ExtResource("1_baml1")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_um20p")
+data = {
+"cells": PackedInt32Array(1, 0, 0, 2, 65535, 0, 2, 65534, 0, 2, 0, 0, 2, 65533, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 3, 65531, 0, 5, 65530, 0, 6, 65532, 0, 5, 65532, 0, 7, 65530, 0, 8, 65530, 0, 8, 65531, 0, 8, 65533, 0, 8, 65534, 0, 8, 0, 0, 8, 1, 0, 8, 2, 0, 9, 65531, 0, 10, 65531, 0, 4, 65533, 0, 4, 65534, 0, 4, 0, 0, 4, 2, 0, 9, 1, 0, 10, 1, 0, 8, 65532, 0, 6, 65533, 0, 6, 65534, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 4, 65535, 0, 1, 2, 0, 2, 2, 0, 4, 3, 0, 10, 65533, 0, 11, 65533, 0, 10, 65535, 0, 10, 3, 0, -65532, 65532, 1, -65531, 65532, 1, -65534, 65535, 1, -65534, 0, 1, -65526, 65533, 1, -65532, 65535, 1, -65532, 0, 1, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 1, 65529, 0, 2, 65529, 0, 3, 65529, 0, 4, 65529, 0, 5, 65529, 0, 6, 65529, 0, 7, 65529, 0, 8, 65529, 0, 9, 65529, 0, 10, 65529, 0, 11, 65529, 0, 12, 65529, 0, -65527, 65533, 1, -65527, 65534, 1, -65527, 65535, 1, -65527, 0, 1, -65528, 0, 1, -65528, 65535, 1, -65528, 65534, 1, -65529, 65534, 1, -65529, 65535, 1, -65529, 0, 1, -65530, 0, 1, -65530, 65535, 1, -65530, 65534, 1, -65531, 0, 1, -65531, 65535, 1, -65531, 65533, 1, -65531, 65534, 1, -65532, 65534, 1, -65532, 65533, 1, -65533, 65533, 1, -65533, 65534, 1, -65533, 65535, 1, -65533, 0, 1, -65533, 1, 1, -65535, 1, 1, -65535, 2, 1, -65535, 3, 1, -65534, 1, 1, -65534, 2, 1, -65534, 3, 1, -65533, 3, 1, -65533, 2, 1, -65532, 3, 1, -65532, 2, 1, -65532, 1, 1, -65531, 1, 1, -65531, 2, 1, -65531, 3, 1, -65530, 1, 1, -65530, 3, 1, -65529, 3, 1, -65529, 2, 1, -65529, 1, 1, -65528, 1, 1, -65528, 3, 1, -65527, 1, 1, -65527, 2, 1, -65527, 3, 1, -65526, 3, 1, -65526, 2, 1, -65525, 3, 1, -65525, 2, 1, -65525, 1, 1, -65525, 65535, 1, -65525, 0, 1, -65526, 1, 1, -65526, 0, 1, -65526, 65535, 1, -65526, 65534, 1, -65525, 65534, 1, -65525, 65533, 1, -65525, 65532, 1, -65525, 65530, 1, -65526, 65530, 1, -65527, 65530, 1, -65528, 65530, 1, -65530, 65532, 1, -65530, 65533, 1, -65529, 65533, 1, -65529, 65532, 1, -65528, 65532, 1, -65527, 65532, 1, -65526, 65532, 1, -65525, 65531, 1, -65526, 65531, 1, -65527, 65531, 1, -65528, 65531, 1, -65529, 65531, 1, -65530, 65530, 1, -65530, 65531, 1, -65532, 65531, 1, -65531, 65531, 1, -65532, 65530, 1, -65533, 65530, 1, -65535, 65530, 1, -65534, 65530, 1, -65534, 65531, 1, -65535, 65531, 1, -65535, 65532, 1, -65535, 65533, 1, -65535, 65534, 1, -65535, 65535, 1, 12, 65530, 0, 12, 65531, 0, 12, 65532, 0, 12, 65533, 0, 12, 65534, 0, 12, 65535, 0, 12, 0, 0, 12, 1, 0, 12, 2, 0, 12, 4, 0, 11, 4, 0, 10, 4, 0, 9, 4, 0, 8, 4, 0, 7, 4, 0, 6, 4, 0, 5, 4, 0, 4, 4, 0, 3, 4, 0, 2, 4, 0, 1, 4, 0, -65524, 3, 1, -65523, 3, 1, 13, 2, 0, 14, 2, 0, 14, 3, 0, 14, 4, 0, 13, 4, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_24wt1")]
+transform = Transform3D(0.999945, 0.0105067, 0, -0.0105067, 0.999945, 0, 0, 0, 1, 2.87363, 4.19929, -1.62175)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.05224, 32.103, 0)
+
+[node name="enemies" type="Node3D" parent="."]
+
+[node name="capsules" type="Node3D" parent="."]
+
+[node name="capsule" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13454, 0, -5.16943)
+
+[node name="capsule2" parent="capsules" instance=ExtResource("4_0w82s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8443, 0, 3.00247)
+
+[node name="negativcapsules" type="Node3D" parent="."]
+
+[node name="negativcapsule" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3062, 0, -0.808245)
+
+[node name="negativcapsule2" parent="negativcapsules" instance=ExtResource("5_8gtss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4245, 0, 6.59754)
+
+[node name="orbs" type="Node3D" parent="."]
+
+[node name="orb" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9)
+
+[node name="orb2" parent="orbs" instance=ExtResource("6_psebu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2149, 0, -7.36562)
+
+[node name="negativorb" type="Node3D" parent="."]
+
+[node name="negativorb" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.033, 0, -11.2649)
+
+[node name="negativorb2" parent="negativorb" instance=ExtResource("7_ikbfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.127, 0, -9.33258)
+
+[node name="cubes" type="Node3D" parent="."]
+
+[node name="cube" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86248, 0, 6.95785)
+
+[node name="cube2" parent="cubes" instance=ExtResource("8_gcoo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9347, 0, -0.9076)
+
+[node name="negativcube" type="Node3D" parent="."]
+
+[node name="negativcube" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8701, 0, 3.03092)
+
+[node name="negativcube2" parent="negativcube" instance=ExtResource("9_hxdwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8645, 0, 5.0739)
+
+[node name="finish" parent="." instance=ExtResource("4_f8umb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.228, 0, 7.1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="finishtime" type="Timer" parent="."]
+
+[node name="capsule" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 32.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="warning" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Orbs" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 31.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Cubes" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 110.0
+offset_right = 31.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Record" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 20.0
+offset_right = 1174.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedcap" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 50.0
+offset_right = 1153.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedorbs" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 80.0
+offset_right = 1151.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="Collectedcubes" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 110.0
+offset_right = 1202.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("6_e4b3t")
+
+[node name="warningtimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Lives" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_e4b3t")
+theme_override_font_sizes/font_size = 30
+
+[connection signal="capsule" from="Player" to="." method="_on_player_capsule"]
+[connection signal="cube" from="Player" to="." method="_on_player_cube"]
+[connection signal="negativcapsule" from="Player" to="." method="_on_player_negativcapsule"]
+[connection signal="negativcube" from="Player" to="." method="_on_player_negativcube"]
+[connection signal="negativorb" from="Player" to="." method="_on_player_negativorb"]
+[connection signal="orb" from="Player" to="." method="_on_player_orb"]
+[connection signal="playertime" from="Player" to="." method="_on_player_playertime"]
+[connection signal="timeout" from="warningtimer" to="." method="_on_warningtimer_timeout"]
