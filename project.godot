@@ -13,6 +13,8 @@ config_version=5
 config/name="spelesprojekts"
 run/main_scene="res://scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+run/max_fps=60
+fullscreen=true
 
 [autoload]
 
@@ -22,6 +24,10 @@ Fighter="*res://scripts/knight/battle/fighter.gd"
 Farmglobal="*res://scripts/farmsimulator/farmglobal.gd"
 Labirintscore="*res://scripts/labirint/labirintscore.gd"
 Zombielandglobal="*res://scripts/zombieland/zombielandglobal.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 

@@ -14,7 +14,6 @@ func _ready():
 	position.y += -0.5
 	
 func _physics_process(delta: float) -> void:
-	# Apply gravity
 	if not is_on_floor():
 		velocity += gravity * delta
 	else:
@@ -65,7 +64,7 @@ func start_attack_damage_timer():
 	var timer = Timer.new()
 	timer.wait_time = middle_time
 	timer.one_shot = true
-	add_child(timer)  # Add the timer to the scene
+	add_child(timer)  
 	timer.start()
 	await timer.timeout
 	deal_damage_to_player()

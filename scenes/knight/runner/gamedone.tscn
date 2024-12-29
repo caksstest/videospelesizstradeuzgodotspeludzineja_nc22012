@@ -156,7 +156,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_g4wfg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bhk5v")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hxuk4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0q1qo")
-text = "Back"
+text = "Game select"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
