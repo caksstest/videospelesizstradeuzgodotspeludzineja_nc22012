@@ -9,7 +9,6 @@ func _ready() -> void:
 	update_monster_count_display()
 
 func initialize_monsters() -> void:
-	# Find all monsters in the scene by group
 	var monsters = get_tree().get_nodes_in_group("monsters")
 	total_monsters = monsters.size()
 	update_monster_count_display()

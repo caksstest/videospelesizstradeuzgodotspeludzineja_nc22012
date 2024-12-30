@@ -6,6 +6,7 @@ var speed = 70
 var chase = false
 var player = null
 @onready var boar_sprite_2d: AnimatedSprite2D = $AnimatedSprite2
+var attack_cooldown = true
 var attack = false #Player's attack 
 var close = false
 var dead = false
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		return  
 	if chase:
 		var direction = player.position - position
-		if direction.length() > SAFE_DISTANCE: 
+		if direction.length() > SAFE_DISTANCE:  
 			position += direction.normalized() * speed * delta
 			boar_sprite_2d.play("run")
 			boar_sprite_2d.flip_h = direction.x > 0
