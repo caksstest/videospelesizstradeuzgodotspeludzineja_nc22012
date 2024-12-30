@@ -6,7 +6,6 @@ var speed = 100
 var chase = false
 var player = null
 @onready var bee_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var attack_cooldown = true
 var attack = false
 var close = false
 var dead = false
@@ -19,30 +18,19 @@ func _physics_process(delta: float) -> void:
 		return 
 	if chase:
 		var direction = player.position - position
-		if direction.length() > SAFE_DISTANCE:  # Only move if farther than the safe distance
+		if direction.length() > SAFE_DISTANCE:  
 			position += direction.normalized() * speed * delta
 			bee_sprite_2d.play("fly")
 			bee_sprite_2d.flip_h = direction.x > 0
 		else:
 			velocity = Vector2.ZERO
-			attack_player(direction) 
+			bee_sprite_2d.play("attack")
+			bee_sprite_2d.flip_h = direction.x > 0
 	else:
 		bee_sprite_2d.play("fly")
 		velocity = Vector2.ZERO
 	move_and_slide()
 	beehealthbar()
-	
-func attack_player(direction: Vector2) -> void:
-	if not attack_cooldown:
-		return
-	attack_cooldown = false
-	attack = true
-	# Orient the attack animation toward the player
-	bee_sprite_2d.play("attack")
-	bee_sprite_2d.flip_h = direction.x > 0
-	# Cooldown logic to prevent constant attacks
-	attack_cooldown = true
-	attack = false
 
 func take_damage1() -> void:
 	if attack and Fighter.playerattack:

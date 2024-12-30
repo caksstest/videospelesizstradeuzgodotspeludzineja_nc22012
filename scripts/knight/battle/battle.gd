@@ -13,27 +13,27 @@ func initialize_monsters() -> void:
 	var monsters = get_tree().get_nodes_in_group("monsters")
 	total_monsters = monsters.size()
 	update_monster_count_display()
-	
+
 func update_monster_count_display() -> void:
 	enemies.text = "ENEMIES LEFT: " + str(total_monsters)
 
 func _on_snail_defeated() -> void:
-	total_monsters -= 1
-	update_monster_count_display()
-	if total_monsters <= 0:
-		victory()
+	check_victory_conditions()
 
 func _on_blackboar_deafeated() -> void:
-	total_monsters -= 1
-	update_monster_count_display()
-	if total_monsters <= 0:
-		victory()
+	check_victory_conditions()
 
 func _on_smallbee_defeated() -> void:
+	check_victory_conditions()
+
+func check_victory_conditions() -> void:
 	total_monsters -= 1
 	update_monster_count_display()
-	if total_monsters <= 0:
+	if total_monsters <= 0 and is_player_alive():
 		victory()
+
+func is_player_alive() -> bool:
+	return playersurv.health > 0
 
 func victory():
 	call_deferred("change_scene")

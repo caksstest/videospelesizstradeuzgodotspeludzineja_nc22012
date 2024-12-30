@@ -95,21 +95,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 
-[node name="again" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_a45oe")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vrmp3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w13bd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_efgk8")
-theme_override_styles/normal = SubResource("StyleBoxFlat_6qw7m")
-text = "Again"
-
 [node name="difficulty" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -157,6 +142,5 @@ text = "Great job! All monsters defeated!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/again" to="." method="_on_again_pressed"]
 [connection signal="pressed" from="VBoxContainer/difficulty" to="." method="_on_difficulty_pressed"]
 [connection signal="pressed" from="VBoxContainer/gameselect" to="." method="_on_gameselect_pressed"]

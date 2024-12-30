@@ -6,7 +6,6 @@ var speed = 70
 var chase = false
 var player = null
 @onready var boar_sprite_2d: AnimatedSprite2D = $AnimatedSprite2
-var attack_cooldown = true
 var attack = false #Player's attack 
 var close = false
 var dead = false
@@ -16,10 +15,10 @@ const SAFE_DISTANCE = 20
 
 func _physics_process(delta: float) -> void:
 	if boar_sprite_2d.animation == "hitted":
-		return  # Do not interrupt the "hitted" animation
+		return  
 	if chase:
 		var direction = player.position - position
-		if direction.length() > SAFE_DISTANCE:  # Only move if farther than the safe distance
+		if direction.length() > SAFE_DISTANCE: 
 			position += direction.normalized() * speed * delta
 			boar_sprite_2d.play("run")
 			boar_sprite_2d.flip_h = direction.x > 0

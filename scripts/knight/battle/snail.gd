@@ -2,11 +2,10 @@ extends CharacterBody2D
 
 signal defeated
 var hitpoints = 250
-var speed = 70
+var speed = 50
 var chase = false
 var player = null
 @onready var snail_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var attack_cooldown = true
 var attack = false
 var close = false
 var dead = false
@@ -19,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		return 
 	if chase:
 		var direction = player.position - position
-		if direction.length() > SAFE_DISTANCE:  # Only move if farther than the safe distance
+		if direction.length() > SAFE_DISTANCE: 
 			position += direction.normalized() * speed * delta
 			snail_sprite_2d.play("walk")
 			snail_sprite_2d.flip_h = direction.x > 0
