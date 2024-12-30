@@ -6,7 +6,6 @@ var speed = 70
 var chase = false
 var player = null
 @onready var boar_sprite_2d: AnimatedSprite2D = $AnimatedSprite2
-var attack_cooldown = true
 var attack = false #Player's attack 
 var close = false
 var dead = false
