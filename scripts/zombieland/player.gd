@@ -66,7 +66,6 @@ func _process(delta):
 
 func update_display():
 	kills.text = "Kills: " + str(Zombielandglobal.kills)
-	playerhealth()
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

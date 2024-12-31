@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var goalcheck: Label = $VBoxContainer/ProgressBar/goalcheck
 @onready var reward: Label = $VBoxContainer/ProgressBar/Reward
 
-var save_file = "user://save_game7.save"
+var save_file = "user://save_game.save"
 var current_goal = 1000  # Initial goal
 var automatic_farm_index = 0  # Track which farm becomes automatic
 var automatic_farms = []  # List to hold automatic farms
@@ -233,11 +233,11 @@ func load_game_state():
 	if FileAccess.file_exists(save_file):
 		var file = FileAccess.open(save_file, FileAccess.READ)
 		if file:
-			var save_data = file.get_var()  # Corrected to properly read the data from the file
+			var save_data = file.get_var() 
 			file.close()
 			# Restore global score and goal
-			Farmglobal.score = save_data.get("score", 5)  # Default to 0 if not found
-			current_goal = save_data.get("current_goal", 1000)  # Default to 10 if not found
+			Farmglobal.score = save_data.get("score", 5)  
+			current_goal = save_data.get("current_goal", 1000)  
 			automatic_farm_index = save_data.get("automatic_farm_index", 0)
 			automatic_farms = save_data.get("automatic_farms", [])
 			# Restore farm states
