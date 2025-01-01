@@ -2,7 +2,7 @@ extends Node2D
 var elapsed_time = 0.0 
 var timer_stopped = false
 @onready var game_container: GridContainer = $GridContainer
-@onready var numberpad: Control = $SelectGrid
+@onready var numberpad: GridContainer = $SelectGrid
 @onready var wronghits: Label = $wronghits
 @onready var gamedone: Panel = $CanvasLayer/gamedone
 @onready var winorlose: Label = $CanvasLayer/gamedone/winorlose
@@ -10,7 +10,7 @@ var timer_stopped = false
 @onready var errortimer: Timer = $errortimer
 @onready var time: Label = $time
 @onready var difficulty: Label = $difficulty
-
+var SHOW_HINTS = true
 var wrong_hits = 0
 const MAX_WRONG_HITS = 3
 # Sudoku Game Data
@@ -18,13 +18,12 @@ var game_board = []  # Holds the buttons displayed in the game
 var puzzle_grid = []  # Contains the current puzzle
 var completed_grid = []  # Stores the completed solution for the puzzle
 var solution_variants = 0  # Tracks the number of solutions for validating unique grids
-var move_history = []  # Tracks moves for undo/redo
+var move_history = []  # Tracks moves for undo
 var number_count = {}
 var active_cell: Vector2i = Vector2i(-1, -1)
 var active_cell_solution = 0
 
 const BOARD_SIZE = 9
-# add function that helps player find same numbers on the board for few seconds 
 func _ready():
 	link_numberpad_actions()
 	initialize_game()
@@ -55,13 +54,13 @@ func initialize_number_count():
 	number_count.clear()
 	for i in range(1, 10):
 		number_count[i] = 9  # Each number can appear at most 9 times
-
 	# Subtract the occurrences already present in the puzzle
 	for row in puzzle_grid:
 		for value in row:
 			if value != 0:
 				number_count[value] -= 1
 	update_numberpad_buttons()
+
 func update_numberpad_buttons():
 	for number_button in numberpad.get_children():
 		var btn = number_button as Button
@@ -94,7 +93,7 @@ func add_cell(pos: Vector2i):
 	if puzzle_grid[row][col] != 0:
 		cell_button.text = str(puzzle_grid[row][col])
 		cell_button.disabled = true 
-		var empty_style = StyleBoxFlat.new()  # Create an empty style
+		var empty_style = StyleBoxFlat.new()  
 		cell_button.add_theme_stylebox_override("focus", empty_style)
 		cell_button.add_theme_stylebox_override("hover", empty_style)
 	else:
@@ -105,7 +104,6 @@ func add_cell(pos: Vector2i):
 	
 	game_container.add_child(cell_button)
 	return cell_button
-
 
 # Handle cell click event
 func on_cell_clicked(pos: Vector2i, solution_value):
@@ -143,19 +141,15 @@ func on_numberpad_button_pressed(selected_number):
 			if wrong_hits >= MAX_WRONG_HITS:
 				game_over()
 				return
-			# Highlight the cell as incorrect (visual feedback)
-			if Sudokuglobal.SHOW_HINTS:
+			if SHOW_HINTS:
 				var style: StyleBoxFlat = target_cell.get_theme_stylebox("normal").duplicate(true)
 				style.bg_color = Color.RED
 				target_cell.add_theme_stylebox_override("normal", style)
 
-				# Start the timer to clear the highlight after a delay
 				errortimer.start()
 
-		# Update the undo/redo buttons and the number pad
 		update_numberpad_buttons()
 
-		# Check if the puzzle is solved
 		if is_puzzle_solved():
 			puzzle_solved()
 
@@ -314,5 +308,4 @@ func _on_gamemenu_pressed() -> void:
 func _on_errortimer_timeout() -> void:
 	if active_cell != Vector2i(-1, -1):
 		var target_cell = game_board[active_cell.x][active_cell.y]
-		# Remove the red highlight by removing the override
 		target_cell.remove_theme_stylebox_override("normal")

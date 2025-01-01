@@ -13,4 +13,4 @@ func _on_hard_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/knight/battle/battle.tscn")
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/gameselect.tscn")
+	get_tree().change_scene_to_file("res://scenes/knight/knightmodes.tscn")
