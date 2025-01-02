@@ -1386,7 +1386,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_pt8ma")
 theme_override_styles/hover = SubResource("StyleBoxFlat_23msk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_16ely")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xn4aw")
-text = "Game menu"
+text = "Game select"
 
 [node name="Warning" type="Label" parent="."]
 visible = false

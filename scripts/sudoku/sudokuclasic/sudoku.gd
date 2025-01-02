@@ -287,6 +287,13 @@ func game_over():
 	for row in game_board:
 		for cell in row:
 			cell.disabled = true
+	for number_button in numberpad.get_children():
+		var btn = number_button as Button
+		if btn:
+			btn.disabled = true 	
+			var normal_style = StyleBoxFlat.new()
+			normal_style.bg_color = Color(0, 0, 0, 0)  # Set a normal-looking background	
+			btn.add_theme_stylebox_override("disabled", normal_style)
 	winorlose.text = "You lost!"
 	gamedone.visible = true
 	timer_stopped = true

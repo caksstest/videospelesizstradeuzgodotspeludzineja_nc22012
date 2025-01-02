@@ -1118,17 +1118,17 @@ position = Vector2(706, 96)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Time" type="Label" parent="CanvasLayer"]
-offset_left = 1060.0
+offset_left = 1047.0
 offset_top = 49.0
-offset_right = 1279.0
+offset_right = 1266.0
 offset_bottom = 95.0
 theme_override_fonts/font = ExtResource("5_7cwo7")
 theme_override_font_sizes/font_size = 24
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 1056.0
+offset_left = 1047.0
 offset_top = 11.0
-offset_right = 1281.0
+offset_right = 1272.0
 offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("5_7cwo7")
 theme_override_font_sizes/font_size = 24

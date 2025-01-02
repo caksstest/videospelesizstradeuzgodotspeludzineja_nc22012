@@ -176,6 +176,7 @@ func take_damage_from_enemy(damage: int = 10):
 	if health <= 0:
 		health = 0
 		is_alive = false
+		playerhealth()
 		emit_signal("player_died")
 
 func playerhealth() -> void: 
