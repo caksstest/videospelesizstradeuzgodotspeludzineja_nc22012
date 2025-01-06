@@ -71,8 +71,8 @@ shadow_offset = Vector2(0, 3.41)
 script = ExtResource("1_aane8")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1281.0
-offset_bottom = 719.0
+offset_right = 1453.0
+offset_bottom = 847.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nmphc")
 
 [node name="SelectGrid" type="GridContainer" parent="."]
