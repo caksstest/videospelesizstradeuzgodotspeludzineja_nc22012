@@ -167,12 +167,9 @@ func undo_move():
 		var row = last_move.row
 		var col = last_move.col
 		var prev_value = last_move.prev
-		var new_value = last_move.new
 
 		if prev_value != 0:
 			number_count[prev_value] -= 1  # Decrement the count for the previous value
-		if new_value != 0:
-			number_count[new_value] += 1  # Increment the count for the undone value
 		
 		if prev_value != 0:
 			game_board[row][col].text = str(prev_value)
