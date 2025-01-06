@@ -296,6 +296,7 @@ func game_over():
 			btn.add_theme_stylebox_override("disabled", normal_style)
 	winorlose.text = "You lost!"
 	gamedone.visible = true
+	undo.visible = false
 	timer_stopped = true
 
 func _on_undo_pressed() -> void:

@@ -68,7 +68,7 @@ func load_game_state():
 			file.close()
 			# Define the key based on the current lives
 			var lives_key = "lives_" + str(Labirintscore.lives)
-			finishtimet = save_data.get(lives_key, null)  # Default to a very large number
+			finishtimet = save_data.get(lives_key, null)
 			# If no record exists, initialize it to 0
 			if finishtimet == float("inf"):
 				finishtimet = 0.0
