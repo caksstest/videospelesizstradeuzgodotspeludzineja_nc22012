@@ -84,6 +84,7 @@ func _physics_process(delta: float) -> void:
 		update_score_display()
 	check_game_over()
 	if persons_lives == 0: # Different levels means different live count !!!
+		timer_stopped = true
 		gameov.text = "Game over!"
 		showpanel()
 
@@ -97,6 +98,7 @@ func check_game_over() -> void:
 		orbs_collected + remaining_orbs < 3 or
 		cubes_collected + remaining_cubes < 3):
 		# Trigger game over if the win condition is unreachable
+		timer_stopped = true
 		gameov.text = "Game over!"
 		showpanel()
 
